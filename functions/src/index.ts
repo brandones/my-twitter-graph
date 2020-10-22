@@ -1,5 +1,11 @@
 import * as functions from "firebase-functions";
 
+exports.scheduledFunction = functions.pubsub
+  .schedule("every 15 minutes")
+  .onRun((context) => {
+    console.log("This will be run every 15 minutes!");
+    return null;
+  });
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
